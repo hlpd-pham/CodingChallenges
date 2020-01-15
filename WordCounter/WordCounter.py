@@ -84,4 +84,4 @@ class WordCounter():
 
     def filterSpecialCharacters(self, token):
         # filter out special characters and transform it into lowercase word and return the result
-        return re.sub('\W+', '', token).lower()
+        return re.sub('[^A-Za-z0-9]+', '', token).lower()
