@@ -23,8 +23,11 @@ class WordCounter():
         outputFileName = 'output.txt'
         with open(outputFileName, 'w') as outputFile:
             for word in sorted(self.wordCountDict, key=self.wordCountDict.get, reverse=True):
-                indentSpaces = self.longestWordLength - len(word)
-                print(f"{indentSpaces*' '}{word} | {self.wordCountDict[word]*'='} ({self.wordCountDict[word]})", file = outputFile)
+                # indent the word so that the pipe symbol of its count
+                # can line up with the longest word
+                indentSpaces = ( self.longestWordLength - len(word) ) * ' '
+                count = self.wordCountDict[word]
+                print(f"{indentSpaces}{word} | {count*'='} ({count})", file = outputFile)
 
     def generateWordCount(self, inputFileName):
         """
