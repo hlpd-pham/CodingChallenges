@@ -23,17 +23,17 @@ occurrences itself. The generated histogram will be stored in an output file (ou
 
 Command Parameters
 ------------------
-	python3 wordCounterDriver.py inputFile
+    python3 wordCounterDriver.py inputFile
 
 Results
 -------
-	- All output is written to output file (output.txt).
+    - All output is written to output file (output.txt).
 
 Notes
 -----
     - The program ignores case sensitivity from the input file
     - All special characters from the input file will be filtered out.
-	- This program will call functions from WordCounter.py
+    - This program will call functions from WordCounter.py
 """
 
 import sys
