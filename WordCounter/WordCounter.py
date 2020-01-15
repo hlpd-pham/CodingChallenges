@@ -72,6 +72,9 @@ class WordCounter():
 
                 # process each token 
                 for token in tokens:
+                    # if length of token is less than 0, go to the next one
+                    if len(token) == 0:
+                        continue
                     # filter out special characters in the token
                     word = self.filterSpecialCharacters(token)
                     # check if word has longer length than current longestWordLength
