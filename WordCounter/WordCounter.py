@@ -57,11 +57,12 @@ class WordCounter():
 
                 if inputLine == "": # EOF
                     break
-
-                inputLine = inputLine.rstrip('\n')	# get rid of new line character of 
-										            # original each line
-                line = inputLine.lstrip()			# get rid of leading whitespaces of each
-                                                    # stripped input line
+                
+                # get rid of new line characters of original line
+                inputLine = inputLine.rstrip('\n')	
+										           
+                # get rid of leading and trailing whitespaces of each stripped input line
+                line = inputLine.lstrip().rstrip()
 
                 # if the is empty, go to the next one
                 if line == '':
@@ -72,9 +73,6 @@ class WordCounter():
 
                 # process each token 
                 for token in tokens:
-                    # if length of token is less than 0, go to the next one
-                    if len(token) == 0:
-                        continue
                     # filter out special characters in the token
                     word = self.filterSpecialCharacters(token)
                     # check if word has longer length than current longestWordLength
